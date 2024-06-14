@@ -1,14 +1,15 @@
-import { defineConfig, devices } from '@playwright/test';
+import { PlaywrightTestConfig, defineConfig, devices } from '@playwright/test';
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// require('dotenv').config();
+const config: PlaywrightTestConfig ={
+testMatch:["tests/addToCart.test.ts"],
+use:{
+  baseURL:"https://ecommerce-playground.lambdatest.io/index.php",
+ headless:false,
+ screenshot:"on",
+ video:"on",
 
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
+}
+}
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -37,15 +38,15 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {
