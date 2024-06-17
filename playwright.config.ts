@@ -1,9 +1,9 @@
 import { PlaywrightTestConfig, defineConfig, devices } from '@playwright/test';
 
 const config: PlaywrightTestConfig ={
-testMatch:["tests/addToCart.test.ts"],
+testMatch:["tests\addactinTest.spec.ts"],
 use:{
-  baseURL:"https://ecommerce-playground.lambdatest.io/index.php",
+  baseURL:"https://accessories.ford.com/",
  headless:false,
  screenshot:"on",
  video:"on",
@@ -25,7 +25,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://127.0.0.1:3000',
+    //  baseURL: 'https://adactinhotelapp.com/',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
