@@ -5,19 +5,6 @@ export class bookHotel {
         throw new Error("Method Not Implemented")
     }
 
-    // await page.locator("#first_name").fill("kanimozhi");
-    // await page.locator("#last_name").fill("S");
-    // await page.locator("#address").fill("Chennai");
-    // await page.locator("#cc_num").fill("1234567890123456");
-    // console.log("ccnumEntered");
-    // await page.locator('#cc_type').selectOption({value:"MAST"})
-    // await page.locator('#cc_exp_month').selectOption({index:11})
-    // await page.locator('#cc_exp_year').selectOption({value:"2024"})
-    // await page.locator('#cc_cvv').fill("0123");
-    // test.slow();
-    // await page.click("#book_now");
-    // console.log("booknow clicked")
-
     readonly page: Page
     readonly ltr_firstName: Locator
     readonly ltr_lastName: Locator
@@ -51,7 +38,7 @@ export class bookHotel {
         await this.ltr_ccExpYear.selectOption({ value: "2024" })
         await this.lts_ccCvv.fill("0123");
         await this.ltr_bookNowBtn.click();
-
+        console.log("booknow btn hitted")
 
 
     }

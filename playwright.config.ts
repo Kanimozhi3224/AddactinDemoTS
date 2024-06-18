@@ -1,14 +1,14 @@
 import { PlaywrightTestConfig, defineConfig, devices } from '@playwright/test';
 
-const config: PlaywrightTestConfig ={
-testMatch:["tests\addactinTest.spec.ts"],
-use:{
-  baseURL:"https://accessories.ford.com/",
- headless:false,
- screenshot:"on",
- video:"on",
+const config: PlaywrightTestConfig = {
+  testMatch: ["tests/V1addactinTest.spects"],
+  use: {
+    baseURL: "https://adactinhotelapp.com",
+    headless: false,
+    screenshot: "on",
+    video: "on",
 
-}
+  }
 }
 export default defineConfig({
   testDir: './tests',
@@ -33,15 +33,15 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
-
     // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
     // },
+
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
 
     // {
     //   name: 'webkit',
@@ -75,4 +75,8 @@ export default defineConfig({
   //   url: 'http://127.0.0.1:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
+  expect: {
+    timeout: 20000
+  },
+
 });
