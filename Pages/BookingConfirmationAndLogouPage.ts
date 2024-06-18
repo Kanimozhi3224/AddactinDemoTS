@@ -1,4 +1,4 @@
-import { expect, Page, Locator } from "@playwright/test"
+import test, { expect, Page, Locator } from "@playwright/test"
 
 export class logOutPage {
     checkOptions() {
@@ -7,20 +7,17 @@ export class logOutPage {
 
     readonly page: Page
     readonly ltr_logOutBtn: Locator
-   
-   
+
     constructor(page: Page) {
         this.page = page
         this.ltr_logOutBtn = this.page.locator("#logout");
-  
 
-  
-}
+    }
+    async logOut() {
+        await test.slow();
+        await this.ltr_logOutBtn.click();
+        console.log("logout clicked")
 
-async logOut(){
-    await this.ltr_logOutBtn.click();
-   
-}
-
+    }
 
 }
